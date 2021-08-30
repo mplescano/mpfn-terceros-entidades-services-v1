@@ -133,7 +133,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>${project.basedir}/specification-api/terceros-entidades-services-v1.yaml</inputSpec>
+							<inputSpec>https://raw.githubusercontent.com/mplescano/mpfn-apis-definitions-schemas/main/specification-api/terceros-entidades-services-v1.yaml</inputSpec>
 							<language>mpfn-spring</language>
 							<library>spring-boot</library>
 							<apiPackage>${project.groupId}.terceros.entidades.specification.api</apiPackage>
