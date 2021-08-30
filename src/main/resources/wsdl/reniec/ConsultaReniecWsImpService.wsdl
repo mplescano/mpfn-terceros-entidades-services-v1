@@ -1,0 +1,360 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://imp.ws.pb.reniec.ws.web.mpfn.gob.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ConsultaReniecWsImpService" targetNamespace="http://imp.ws.pb.reniec.ws.web.mpfn.gob.pe/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://imp.ws.pb.reniec.ws.web.mpfn.gob.pe/" targetNamespace="http://imp.ws.pb.reniec.ws.web.mpfn.gob.pe/" version="1.0">
+
+  <xs:complexType name="reniecresultado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="auditaIpCliente" type="xs:string"/>
+      <xs:element minOccurs="0" name="auditaUsuarioDni" type="xs:string"/>
+      <xs:element minOccurs="0" name="auditaUsuarioId" type="xs:string"/>
+      <xs:element minOccurs="0" name="auditaUsuarioNombCompleto" type="xs:string"/>
+      <xs:element minOccurs="0" name="auditaVersion" type="xs:string"/>
+      <xs:element minOccurs="0" name="codigo" type="xs:string"/>
+      <xs:element name="estado" type="xs:boolean"/>
+      <xs:element name="idAuditBusqueda" type="xs:int"/>
+      <xs:element name="idAuditConsulta" type="xs:int"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="listaPersonas" nillable="true" type="tns:reniecpersona"/>
+      <xs:element minOccurs="0" name="mensaje" type="xs:string"/>
+      <xs:element minOccurs="0" name="messageIdMq" type="xs:base64Binary"/>
+      <xs:element minOccurs="0" name="persona" type="tns:reniecpersona"/>
+      <xs:element name="tiempoRespuesta" type="xs:long"/>
+      <xs:element name="tiempoRespuestaDao" type="xs:long"/>
+      <xs:element name="tiempoRespuestaMq" type="xs:long"/>
+      <xs:element name="tipoConsulta" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="reniecpersona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apeCasada" type="xs:string"/>
+      <xs:element minOccurs="0" name="apeMaterno" type="xs:string"/>
+      <xs:element minOccurs="0" name="apeMaternoMadre" type="xs:string"/>
+      <xs:element minOccurs="0" name="apeMaternoPadre" type="xs:string"/>
+      <xs:element minOccurs="0" name="apePaterno" type="xs:string"/>
+      <xs:element minOccurs="0" name="apePaternoMadre" type="xs:string"/>
+      <xs:element minOccurs="0" name="apePaternoPadre" type="xs:string"/>
+      <xs:element minOccurs="0" name="auditaDni" type="xs:string"/>
+      <xs:element minOccurs="0" name="auditaFecha" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="auditaIp" type="xs:string"/>
+      <xs:element minOccurs="0" name="block" type="xs:string"/>
+      <xs:element minOccurs="0" name="codDocMadre" type="xs:string"/>
+      <xs:element minOccurs="0" name="codDocPadre" type="xs:string"/>
+      <xs:element minOccurs="0" name="codDocSustentatorio" type="xs:string"/>
+      <xs:element minOccurs="0" name="codError" type="xs:string"/>
+      <xs:element minOccurs="0" name="codEstadoCivil" type="xs:string"/>
+      <xs:element minOccurs="0" name="codGradoInstr" type="xs:string"/>
+      <xs:element minOccurs="0" name="codPrefijoBlock" type="xs:string"/>
+      <xs:element minOccurs="0" name="codPrefijoDirec" type="xs:string"/>
+      <xs:element minOccurs="0" name="codPrefijoInterior" type="xs:string"/>
+      <xs:element minOccurs="0" name="codPrefijoUrbanizacion" type="xs:string"/>
+      <xs:element minOccurs="0" name="codRestriccion" type="xs:string"/>
+      <xs:element minOccurs="0" name="codSexo" type="xs:string"/>
+      <xs:element minOccurs="0" name="codTipoFichaReg" type="xs:string"/>
+      <xs:element minOccurs="0" name="codUbigContinenteDom" type="xs:string"/>
+      <xs:element minOccurs="0" name="codUbigContinenteNac" type="xs:string"/>
+      <xs:element minOccurs="0" name="codUbigDepartamentoDom" type="xs:string"/>
+      <xs:element minOccurs="0" name="codUbigDepartamentoNac" type="xs:string"/>
+      <xs:element minOccurs="0" name="codUbigDistritoDom" type="xs:string"/>
+      <xs:element minOccurs="0" name="codUbigDistritoNac" type="xs:string"/>
+      <xs:element minOccurs="0" name="codUbigLocalidadDom" type="xs:string"/>
+      <xs:element minOccurs="0" name="codUbigLocalidadNac" type="xs:string"/>
+      <xs:element minOccurs="0" name="codUbigPaisDom" type="xs:string"/>
+      <xs:element minOccurs="0" name="codUbigPaisNac" type="xs:string"/>
+      <xs:element minOccurs="0" name="codUbigProvinciaDom" type="xs:string"/>
+      <xs:element minOccurs="0" name="codUbigProvinciaNac" type="xs:string"/>
+      <xs:element minOccurs="0" name="constVot" type="xs:string"/>
+      <xs:element minOccurs="0" name="descConsVotacion" type="xs:string"/>
+      <xs:element minOccurs="0" name="descContinenteDom" type="xs:string"/>
+      <xs:element minOccurs="0" name="descContinenteNac" type="xs:string"/>
+      <xs:element minOccurs="0" name="descDepartamentoDom" type="xs:string"/>
+      <xs:element minOccurs="0" name="descDepartamentoNac" type="xs:string"/>
+      <xs:element minOccurs="0" name="descDirec" type="xs:string"/>
+      <xs:element minOccurs="0" name="descDireccionCompleta" type="xs:string"/>
+      <xs:element minOccurs="0" name="descDistritoDom" type="xs:string"/>
+      <xs:element minOccurs="0" name="descDistritoNac" type="xs:string"/>
+      <xs:element minOccurs="0" name="descDocSustentatorio" type="xs:string"/>
+      <xs:element minOccurs="0" name="descEstadoCivil" type="xs:string"/>
+      <xs:element minOccurs="0" name="descGradoInstr" type="xs:string"/>
+      <xs:element minOccurs="0" name="descLocalidadDom" type="xs:string"/>
+      <xs:element minOccurs="0" name="descLocalidadNac" type="xs:string"/>
+      <xs:element minOccurs="0" name="descPaisDom" type="xs:string"/>
+      <xs:element minOccurs="0" name="descPaisNac" type="xs:string"/>
+      <xs:element minOccurs="0" name="descPrefijoBlock" type="xs:string"/>
+      <xs:element minOccurs="0" name="descPrefijoDirec" type="xs:string"/>
+      <xs:element minOccurs="0" name="descPrefijoInterior" type="xs:string"/>
+      <xs:element minOccurs="0" name="descPrefijoUrbanizacion" type="xs:string"/>
+      <xs:element minOccurs="0" name="descProvinciaDom" type="xs:string"/>
+      <xs:element minOccurs="0" name="descProvinciaNac" type="xs:string"/>
+      <xs:element minOccurs="0" name="descRestriccion" type="xs:string"/>
+      <xs:element minOccurs="0" name="descSexo" type="xs:string"/>
+      <xs:element minOccurs="0" name="digVerificacion" type="xs:string"/>
+      <xs:element minOccurs="0" name="dni" type="xs:string"/>
+      <xs:element minOccurs="0" name="estatura" type="xs:string"/>
+      <xs:element minOccurs="0" name="etapa" type="xs:string"/>
+      <xs:element minOccurs="0" name="fechaCaducidad" type="xs:string"/>
+      <xs:element minOccurs="0" name="fechaDefuncion" type="xs:string"/>
+      <xs:element minOccurs="0" name="fechaExpedicion" type="xs:string"/>
+      <xs:element minOccurs="0" name="fechaInscripcion" type="xs:string"/>
+      <xs:element minOccurs="0" name="fechaNac" type="xs:string"/>
+      <xs:element minOccurs="0" name="fichaPdf" type="xs:base64Binary"/>
+      <xs:element minOccurs="0" name="flgImagen" type="xs:string"/>
+      <xs:element minOccurs="0" name="idPersona" type="xs:string"/>
+      <xs:element minOccurs="0" name="imagenFirma" type="xs:base64Binary"/>
+      <xs:element minOccurs="0" name="imagenFoto" type="xs:base64Binary"/>
+      <xs:element minOccurs="0" name="interior" type="xs:string"/>
+      <xs:element minOccurs="0" name="lonFirma" type="xs:string"/>
+      <xs:element minOccurs="0" name="lonFoto" type="xs:string"/>
+      <xs:element minOccurs="0" name="lote" type="xs:string"/>
+      <xs:element minOccurs="0" name="manzana" type="xs:string"/>
+      <xs:element minOccurs="0" name="nombreMadre" type="xs:string"/>
+      <xs:element minOccurs="0" name="nombrePadre" type="xs:string"/>
+      <xs:element minOccurs="0" name="nombres" type="xs:string"/>
+      <xs:element minOccurs="0" name="numDirec" type="xs:string"/>
+      <xs:element minOccurs="0" name="numDocMadre" type="xs:string"/>
+      <xs:element minOccurs="0" name="numDocPadre" type="xs:string"/>
+      <xs:element minOccurs="0" name="numDocSustentatorio" type="xs:string"/>
+      <xs:element minOccurs="0" name="reservado" type="xs:string"/>
+      <xs:element minOccurs="0" name="urbanizacion" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="mayorPorDni">
+    <wsdl:part name="dni" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="sistema" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="usuario" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="reniecjwt" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="clienteusuario" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="clientepc" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="clienteip" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="clientemac" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="clientevrs" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="coddistfiscal" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="coddependencia" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="idunico" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="id_usuario" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="uniqueid" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="httphost" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="httpuseragent" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="remoteport" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="requestmethod" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="parent" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="platform" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="platformversion" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="win" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="browser" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="typebrowser" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="observacion" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="conpdf" type="xsd:string">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="mayorPorDniResponse">
+    <wsdl:part name="return" type="tns:reniecresultado">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="menorPorDni">
+    <wsdl:part name="apoderado" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="dni" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="tipVinculo" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="sistema" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="usuario" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="reniecjwt" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="clienteusuario" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="clientepc" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="clienteip" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="clientemac" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="clientevrs" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="coddistfiscal" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="coddependencia" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="idunico" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="id_usuario" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="uniqueid" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="httphost" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="httpuseragent" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="remoteport" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="requestmethod" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="parent" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="platform" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="platformversion" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="win" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="browser" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="typebrowser" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="observacion" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="conpdf" type="xsd:string">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="porNombresResponse">
+    <wsdl:part name="return" type="tns:reniecresultado">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="porNombres">
+    <wsdl:part name="appaterno" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="apmaterno" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="nombres" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="sistema" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="usuario" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="reniecjwt" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="clienteusuario" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="clientepc" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="clienteip" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="clientemac" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="clientevrs" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="coddistfiscal" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="coddependencia" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="idunico" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="id_usuario" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="uniqueid" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="httphost" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="httpuseragent" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="remoteport" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="requestmethod" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="parent" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="platform" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="platformversion" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="win" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="browser" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="typebrowser" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="observacion" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="conpdf" type="xsd:string">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="menorPorDniResponse">
+    <wsdl:part name="return" type="tns:reniecresultado">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ConsultaReniecWs">
+    <wsdl:operation name="mayorPorDni">
+      <wsdl:input message="tns:mayorPorDni" name="mayorPorDni">
+    </wsdl:input>
+      <wsdl:output message="tns:mayorPorDniResponse" name="mayorPorDniResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="porNombres">
+      <wsdl:input message="tns:porNombres" name="porNombres">
+    </wsdl:input>
+      <wsdl:output message="tns:porNombresResponse" name="porNombresResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="menorPorDni">
+      <wsdl:input message="tns:menorPorDni" name="menorPorDni">
+    </wsdl:input>
+      <wsdl:output message="tns:menorPorDniResponse" name="menorPorDniResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultaReniecWsImpServiceSoapBinding" type="tns:ConsultaReniecWs">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="mayorPorDni">
+      <soap:operation soapAction="http://imp.ws.pb.reniec.ws.web.mpfn.gob.pe/#mayorPorDni" style="rpc"/>
+      <wsdl:input name="mayorPorDni">
+        <soap:body namespace="http://imp.ws.pb.reniec.ws.web.mpfn.gob.pe/" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="mayorPorDniResponse">
+        <soap:body namespace="http://imp.ws.pb.reniec.ws.web.mpfn.gob.pe/" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="porNombres">
+      <soap:operation soapAction="http://imp.ws.pb.reniec.ws.web.mpfn.gob.pe/#porNombres" style="rpc"/>
+      <wsdl:input name="porNombres">
+        <soap:body namespace="http://imp.ws.pb.reniec.ws.web.mpfn.gob.pe/" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="porNombresResponse">
+        <soap:body namespace="http://imp.ws.pb.reniec.ws.web.mpfn.gob.pe/" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="menorPorDni">
+      <soap:operation soapAction="http://imp.ws.pb.reniec.ws.web.mpfn.gob.pe/#menorPorDni" style="rpc"/>
+      <wsdl:input name="menorPorDni">
+        <soap:body namespace="http://imp.ws.pb.reniec.ws.web.mpfn.gob.pe/" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="menorPorDniResponse">
+        <soap:body namespace="http://imp.ws.pb.reniec.ws.web.mpfn.gob.pe/" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultaReniecWsImpService">
+    <wsdl:port binding="tns:ConsultaReniecWsImpServiceSoapBinding" name="ConsultaReniecWsImpPort">
+      <soap:address location="http://172.16.100.51:8080/ws-reniec-full/ConsultaReniecWsImpService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

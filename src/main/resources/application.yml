@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: terceros-entidades-services-v1
+  cloud:
+    config:
+      uri: 
+  messages:
+    basename: messages/messages
+  zipkin:
+    enabled: false
+
+server:
+  compression:
+    enabled: true
+    mime-types: application/json,text/css,application/javascript
+    min-response-size: 2048
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+    context-path: /gestion-tic/terceros/entidades/v1
+    
+mpfn:
+  support:
+    cloud:
+      client-web-soap:
+        reniec:
+          wsdl-uri: http://181.176.145.155:7076/ws-reniec-full/ConsultaReniecWsImpService?wsdl
+          service-name: ConsultaReniecWsImpService
+          endpoint-uri: http://181.176.145.155:7076/ws-reniec-full/ConsultaReniecWsImpService
+          target-name: http://imp.ws.pb.reniec.ws.web.mpfn.gob.pe/
+          package-path: pe.gob.mpfn.gestiontic.services.terceros.entidades.modules.reniec.client.domain
+          connection-timeout-ms: 30000
+          receive-timeout-ms: 30000
+          credentials:
+            token-jwt: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDT05TVUxUQSIsImNsYXZlIjoiMDAwMDAwMDAiLCJzaXN0ZW1hIjoiUkVOSUVDIiwiaXNzIjoiTVBFIiwiaWRzaXN0ZW1hIjoiMTc3IiwiaWR1c3VhcmlvIjoiUkVOSUVDMjAyMCIsImlkRW50aWRhZCI6MSwiYXVkIjoiUkVOSUVDTVBGTiIsInVzdWFyaW8iOiJNUEZOMTc3IiwiZW1wcmVzYSI6Ik1QRk4iLCJleHAiOjE5NTY1NDU5OTksImlhdCI6MTU5ODY2MzI2MiwiZG5pIjoiMDAwMDAwMDAiLCJqdGkiOiIxNzcifQ.JC7fkSVDQJWKl9mZoTXkd_sczHye9wf-Fu1MbXZStWI
+            cod-sistema: 177
+            cod-dependencia: 0000
+            cod-distritoFiscal: 05
+          constantes:
+            cod-exito: 0000
+            cliente-pc: APLICACION_1
+            cliente-mac: 02:42:ac:11:00:04
+            cliente-version: 1.0
+            http-host: cfe.mpfn.gob.pe
+            pdf: N
