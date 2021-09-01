@@ -47,7 +47,7 @@ public class PersonaServiceImpl implements PersonaService {
 							+ reniecpersona.getDescProvinciaNac() + "-" + reniecpersona.getDescDistritoNac())
 					.codPaisNacimiento(reniecpersona.getCodUbigPaisNac())
 					.descPaisNacimiento(reniecpersona.getDescPaisNac());
-
+			
 			personaNatural.setEsMenor(Boolean.FALSE);
 			Optional.ofNullable(reniecpersona.getFechaNac()).ifPresent(strFechaNac -> personaNatural
 					.setFechaNacimiento(LocalDate.parse(strFechaNac, DateTimeFormatter.ofPattern("dd/MM/yyyy"))));
